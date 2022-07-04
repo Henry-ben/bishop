@@ -1,0 +1,24 @@
+public class Main {
+
+    public static void main(String[] args){
+        final byte monthsInYear =12;
+        final byte percent= 100;
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Principal:");
+       int principal= scanner.nextInt();
+        System.out.print("annualinterest:");
+       double annualInterest= scanner.nextDouble();
+       double monthlyPayment=annualInterest/percent/monthsInYear;
+        System.out.print("years:");
+        int years=scanner.nextByte();
+        int number_of_payment= years*monthsInYear;
+        double mortgage = principal*(monthlyPayment*Math.pow(1+monthlyPayment,number_of_payment)
+                /(Math.pow(1+monthlyPayment,number_of_payment)-1));
+        System.out.println(mortgage);
+        String mortgageFormatted= NumberFormat.getCurrencyInstance().format(mortgage);
+        System.out.println(mortgageFormatted);
+
+
+
+
+    }
